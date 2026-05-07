@@ -1,29 +1,31 @@
-# Nome da nossa fabrica automatiza
-name : minha primeira linha de montagem
+# Nome da nossa fábrica automatizada
+name: Minha Primeira Linha de Montagem
 
-@ Define QUANDO a fabrica deve começar a funcionar
+# Define QUANDO a fábrica deve começar a funcionar
 on:
-  #sempre que algum enviar peças novas {push} para o repositorio
+
+  # Sempre que alguém enviar peças novas (push) para o repositório
   push:
-  # fabrica so funciona se o envio acontencer na linha principal de produção (branch main)
+
+    # A fábrica só funciona se o envio acontecer na linha principal de produção (branch main)
     branches: [ main ]
 
-# area onde fica as estações de trabalho na fabrica
+# Área onde ficam as estações de trabalho da fábrica
 jobs:
 
-# nome da estação principal da linha principal
-build-e-teste:
+  # Nome da estação principal da linha de montagem
+  build-e-teste:
 
-#define qual maquina/robo sera usado na fabrica
-# aqui estamos usando um computador linux Ubntu usado pelo github
-runs-on: Ubntu-latest
+    # Define qual máquina/robô será usado na fábrica
+    # Aqui estamos usando um computador Linux Ubuntu criado pelo GitHub
+    runs-on: ubuntu-latest
 
-# lista de tarefas que os robos executarão
-steps:
+    # Lista de tarefas que os robôs executarão
+    steps:
 
-# primeira tarefa:
-# o robo pega chasst do carro, ou seja baixa o codigo-fonte do projeto
- - name: 1. Pegar o chassi do carro (código-fonte)
+      # Primeira tarefa:
+      # O robô pega o chassi do carro, ou seja, baixa o código-fonte do projeto
+      - name: 1. Pegar o chassi do carro (código-fonte)
 
         # Comando pronto do GitHub que copia os arquivos do repositório
         uses: actions/checkout@v3
